@@ -1051,7 +1051,7 @@ macro_rules! camera {
         $fighter.clear_lua_stack();
         lua_args!($fighter, $($arg),*);
         smash::app::sv_module_access::camera($fighter.lua_state_agent);
-        let ret = $fighter.pop_lua_stack(1).get_int();
+        let ret = $fighter.pop_lua_stack(1).get_bool();
         ret
     }
 }
